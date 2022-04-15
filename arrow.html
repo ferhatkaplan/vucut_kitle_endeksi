@@ -1,0 +1,33 @@
+<h1>Javascript Vücut Kitle İndeksi Hesaplama </h1>
+    
+<label>Boyunuzu Giriniz(cm): </label>
+<input type="number" id="boy">
+<label>Kilonuzu giriniz(kg): </label>
+<input type="number" id="kilo">
+
+<button id="hesapla" onclick="hesapla()">Hesapla</button>
+
+
+<script>
+    function hesapla(){
+        var boy=document.getElementById("boy").value;
+        var kilo=document.getElementById("kilo").value;
+
+        var b = Number(boy);
+        var k = Number(kilo);
+
+        var ind = k / (b/100*b/100);
+
+        if(ind<18)
+            alert("Zayıf" + " " + ind.toFixed(2));
+        else if(ind>=18 && ind<25)
+            alert("Normal" + " " +  ind.toFixed(2));
+        else if(ind>=25 && ind<30)
+            alert("Kilolu" + " " + ind.toFixed(2));
+        else if(ind>=30 && ind<40)
+            alert("Obez" + " " +  ind.toFixed(2));
+        else
+            alert("İleri Derece Obez" + " " +  ind.toFixed(2));
+    }
+
+</script>
